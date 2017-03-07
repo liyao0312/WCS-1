@@ -10,17 +10,15 @@ namespace WCS.Models
 {
     public class PageModel
     {
-        public List<CarModel> results;
-        public List<CarModel> savedCars;
+        public List<Car> Results;
+        public List<Car> SavedCars;
 
         public void PopulateDataFromJsonFile(string filename)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
             var tempPageModel = ser.Deserialize<PageModel>(File.ReadAllText(filename));
-            results = tempPageModel.results;
-            savedCars = tempPageModel.savedCars;
-                
-                
-        }
+            Results = tempPageModel.Results;
+            SavedCars = tempPageModel.SavedCars;
+        }        
     }
 }
