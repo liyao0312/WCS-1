@@ -13,10 +13,9 @@ namespace WCS.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var model = new PageModel();
             var filename = Server.MapPath(@"~/App_Data/SampleData.json");
             var repository = new Repository();
-            model = repository.PopulateDataFromJsonFile(filename);
+            var model = repository.PopulatePageModelFromJsonFile(filename);
             return View(model);
         }
         
