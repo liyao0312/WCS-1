@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WCS.Models;
+using WCS.PageModels;
 
 namespace WCS.Controllers
 {
@@ -18,5 +19,6 @@ namespace WCS.Controllers
             model.PopulateDataFromJsonFile(filename);
             return View(model);
         }
+        
     }
 }

@@ -5,8 +5,9 @@ using System.Web;
 using System.IO;
 using System.Web.Script.Serialization;
 using System.Web.Hosting;
+using WCS.Models;
 
-namespace WCS.Models
+namespace WCS.PageModels
 {
     public class PageModel
     {
