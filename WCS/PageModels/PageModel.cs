@@ -13,13 +13,5 @@ namespace WCS.PageModels
     {
         public List<Car> Results;
         public List<Car> SavedCars;
-
-        public void PopulateDataFromJsonFile(string filename)
-        {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
-            var tempPageModel = ser.Deserialize<PageModel>(File.ReadAllText(filename));
-            Results = tempPageModel.Results;
-            SavedCars = tempPageModel.SavedCars;
-        }        
     }
 }

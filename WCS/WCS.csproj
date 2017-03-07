@@ -148,6 +148,7 @@
     <Compile Include="Models\Car.cs" />
     <Compile Include="PageModels\PageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

@@ -10,6 +10,5 @@ namespace WCS.Models
         public string Title { get; set; }
         public string Price { get; set; }
         public string Thumbnail { get; set; }
-
     }
 }

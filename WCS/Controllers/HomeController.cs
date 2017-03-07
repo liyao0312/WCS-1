@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using WCS.Models;
 using WCS.PageModels;
-
+using WCS.Repositories;
 namespace WCS.Controllers
 {
     public class HomeController : Controller
@@ -15,8 +15,8 @@ namespace WCS.Controllers
         {
             var model = new PageModel();
             var filename = Server.MapPath(@"~/App_Data/SampleData.json");
-
-            model.PopulateDataFromJsonFile(filename);
+            var repository = new Repository();
+            model = repository.PopulateDataFromJsonFile(filename);
             return View(model);
         }
         
