@@ -17,7 +17,13 @@ namespace WCS.Repositories
             
             return tempPageModel;
         }
-
+        public bool SavePageModelToJsonFile(string filename, PageModel model)
+        {
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            var stringJson = ser.Serialize(model);
+            System.IO.File.WriteAllText(filename, stringJson);
+            return true;
+        }
         public PageModel AddToSavedCars(string carId, PageModel model)
         {   //check if the car already saved, then return 
             if (model.SavedCars.Where(c => c.Id == carId).Count() > 0) return model;

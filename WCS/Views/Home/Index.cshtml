@@ -17,7 +17,7 @@
                         <img src="@Url.Content(car.Thumbnail)" alt="@car.Title" />
                         <div>@car.Title</div>
                         <div>@car.Price</div>
-                        <input type="button" value="Save" onclick="location.href='@Url.Action("Create", "User")'" />
+                        <input type="button" value="Save" onclick="location.href='@Url.Action("Add", "Home", new { id = @car.Id })'" />
                     </div>
                 </div>
             }
@@ -37,13 +37,11 @@
                         <img src="@Url.Content(car.Thumbnail)" alt="@car.Title" />
                         <div>@car.Title</div>
                         <div>@car.Price</div>
-                        <input type="button" value="Remove" onclick="location.href='@Url.Action("Create", "User")'" />
+                        <input type="button" value="Remove" onclick="location.href='@Url.Action("Remove", "Home",new { id = @car.Id})'" />
                     </div>
                 </div>
             }
-
-        }
-    
+        }    
     </div>
 </div>
 

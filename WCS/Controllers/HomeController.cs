@@ -18,6 +18,25 @@ namespace WCS.Controllers
             var model = repository.PopulatePageModelFromJsonFile(filename);
             return View(model);
         }
-        
+        public ActionResult Add(string id)
+        {
+            var filename = Server.MapPath(@"~/App_Data/SampleData.json");
+            var repository = new Repository();
+            var model = repository.PopulatePageModelFromJsonFile(filename);
+            model = repository.AddToSavedCars(id, model);
+            var boolResult = repository.SavePageModelToJsonFile(filename, model);
+
+            return RedirectToAction("Index");
+        }
+        public ActionResult Remove(string id)
+        {
+            var filename = Server.MapPath(@"~/App_Data/SampleData.json");
+            var repository = new Repository();
+            var model = repository.PopulatePageModelFromJsonFile(filename);
+            model = repository.RemoveFromSavedCars(id, model);
+            var boolResult = repository.SavePageModelToJsonFile(filename, model);
+
+            return RedirectToAction("Index");
+        }
     }
 }
