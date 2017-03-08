@@ -14,10 +14,15 @@
             {
                 <div class="row searchresults-block">
                     <div class="col-md-12">
-                        <img src="@Url.Content(car.Thumbnail)" alt="@car.Title" />
+                        <div class="img-container">
+                            <img src="@Url.Content(car.Thumbnail)" alt="@car.Title" class="img" />
+                            <div class="overlay"></div>                          
+                            <div class="button" onclick="location.href='@Url.Action("Add", "Home", new { id = @car.Id })'" >
+                                <span>Save</span>
+                            </div>
+                        </div>
                         <div>@car.Title</div>
                         <div>@car.Price</div>
-                        <input type="button" value="Save" onclick="location.href='@Url.Action("Add", "Home", new { id = @car.Id })'" />
                     </div>
                 </div>
             }
@@ -34,10 +39,14 @@
             {
                 <div class="row searchresults-block">
                     <div class="col-md-12">
-                        <img src="@Url.Content(car.Thumbnail)" alt="@car.Title" />
+                        <div class="img-container">
+                            <img src="@Url.Content(car.Thumbnail)" alt="@car.Title" class="img" />                            
+                            <div class="button" value="Remove" onclick="location.href='@Url.Action("Remove", "Home",new { id = @car.Id})'">
+                                <span>Remove</span>
+                            </div>
+                        </div>
                         <div>@car.Title</div>
                         <div>@car.Price</div>
-                        <input type="button" value="Remove" onclick="location.href='@Url.Action("Remove", "Home",new { id = @car.Id})'" />
                     </div>
                 </div>
             }
