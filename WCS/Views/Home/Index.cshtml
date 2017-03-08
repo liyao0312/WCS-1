@@ -4,7 +4,50 @@
 }
 
 <h2>Index</h2>
-@Model.Results.Count
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>Search Results</h3>
+        @if (Model != null)
+        {   
+            foreach (var car in Model.Results)
+            {
+                <div class="row searchresults-block">
+                    <div class="col-md-12">
+                        <img src="@Url.Content(car.Thumbnail)" alt="@car.Title" />
+                        <div>@car.Title</div>
+                        <div>@car.Price</div>
+                        <input type="button" value="Save" onclick="location.href='@Url.Action("Create", "User")'" />
+                    </div>
+                </div>
+            }
+
+        }
+    
+    </div>
+    <div class="col-md-6">
+
+        <h3>Saved Cars</h3>
+        @if (Model != null)
+        {
+            foreach (var car in Model.SavedCars)
+            {
+                <div class="row searchresults-block">
+                    <div class="col-md-12">
+                        <img src="@Url.Content(car.Thumbnail)" alt="@car.Title" />
+                        <div>@car.Title</div>
+                        <div>@car.Price</div>
+                        <input type="button" value="Remove" onclick="location.href='@Url.Action("Create", "User")'" />
+                    </div>
+                </div>
+            }
+
+        }
+    
+    </div>
+</div>
+
+
 <br/>
-@Model.SavedCars.Count
+
 
