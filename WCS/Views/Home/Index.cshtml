@@ -41,6 +41,7 @@
                     <div class="col-md-12">
                         <div class="img-container">
                             <img src="@Url.Content(car.Thumbnail)" alt="@car.Title" class="img" />                            
+                            <div class="overlay"></div> 
                             <div class="button" value="Remove" onclick="location.href='@Url.Action("Remove", "Home",new { id = @car.Id})'">
                                 <span>Remove</span>
                             </div>
