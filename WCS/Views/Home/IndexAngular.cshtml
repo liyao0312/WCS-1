@@ -1,0 +1,28 @@
+﻿@model WCS.PageModels.PageModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<script src="~/Scripts/app.js"></script>
+<script src="~/Scripts/car-results.component.js"></script>
+<script src="~/Scripts/saved-cars.component.js"></script>
+<div  ng-app="CarResultsApp">
+    <h2>Index Angular</h2>
+
+    <a href='@Url.Action("Index", "Home")'>Normal Version</a>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Search Results</h3>
+            <car-results action-name="Save" action-path="AddAndGetJsonResult"></car-results>
+        </div>
+        <div class="col-md-6">
+            <h3>Saved Cars</h3>
+            <saved-cars action-name="Remove" action-path="RemoveAndGetJsonResult"></saved-cars>           
+        </div>
+    </div>
+
+
+    <br />
+</div>
+

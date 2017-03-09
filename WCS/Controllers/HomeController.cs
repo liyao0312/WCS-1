@@ -37,5 +37,33 @@ namespace WCS.Controllers
             var boolResult = repository.SavePageModelToJsonFile(model);
             return RedirectToAction("Index");
         }
+
+
+        // GET: HomeAngular
+        public ActionResult IndexAngular()
+        {
+            var model = repository.LoadPageModelFromJsonFile();
+            return View(model);
+        }
+        public ActionResult GetJsonData()
+        {
+            var model = repository.LoadPageModelFromJsonFile();
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult AddAndGetJsonResult(string id)
+        {
+            var model = repository.LoadPageModelFromJsonFile();
+            model = service.AddToSavedCars(id, model);
+            var boolResult = repository.SavePageModelToJsonFile(model);
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult RemoveAndGetJsonResult(string id)
+        {
+            var model = repository.LoadPageModelFromJsonFile();
+            model = service.RemoveFromSavedCars(id, model);
+            var boolResult = repository.SavePageModelToJsonFile(model);
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
     }
 }

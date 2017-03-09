@@ -1,0 +1,13 @@
+﻿<div class="row searchresults-block" ng-repeat="car in $ctrl.carlist">
+    <div class="col-md-12">
+        <div class="img-container">
+            <img ng-src="{{car.Thumbnail}}" alt="{{car.Title}}" class="img" />
+            <div class="overlay"></div>
+            <div class="button" ng-click="SaveCar(car.Id)">
+                <span>{{buttonName}}</span>
+            </div>
+        </div>
+        <div>{{car.Title}}</div>
+        <div>{{car.Price}}</div>
+    </div>
+</div>
