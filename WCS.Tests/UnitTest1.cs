@@ -15,7 +15,7 @@ namespace WCS.Tests
         [TestMethod]
         public void TestLoadData()
         {
-            var repo = new Repository("../SampleData.json");
+            var repo = new Repository("../../App_Data/SampleData.json");
             var pageModel = new PageModel();
 
             pageModel = repo.LoadPageModelFromJsonFile();
@@ -26,7 +26,7 @@ namespace WCS.Tests
         [TestMethod]
         public void TestAdd()
         {
-            var repo = new Repository("../SampleData.json");
+            var repo = new Repository("../../App_Data/SampleData.json");
             var pageModel = new PageModel();
             var svc = new Service();
 
@@ -41,14 +41,14 @@ namespace WCS.Tests
 
             sampleIdToAdd = "17";
             pageModel = svc.AddToSavedCars(sampleIdToAdd, pageModel);
-            Assert.AreEqual(pageModel.SavedCars.Count, 2, "Car cannot be found, savedcars doesnt change");
+            Assert.AreEqual(pageModel.SavedCars.Count, 2, "Car cannot be found, savedcars doesn't change");
 
         }
 
         [TestMethod]
         public void TestRemove()
         {
-            var repo = new Repository("../SampleData.json");
+            var repo = new Repository("../../App_Data/SampleData.json");
             var svc = new Service();
             var pageModel = new PageModel();
             pageModel = repo.LoadPageModelFromJsonFile();
