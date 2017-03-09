@@ -3,8 +3,10 @@
         <div class="row searchresults-block">
               <div class="col-md-12">
                    <div class="img-container">
-                        <img src="@Url.Content(car.Thumbnail)" alt="@car.Title" class="img" />
-                        <div class="overlay"></div>
+                       <div class="overlay-container">
+                           <img src="@Url.Content(car.Thumbnail)" alt="@car.Title" class="img" />
+                           <div class="overlay"></div>
+                       </div>
                         <div class="button" onclick="location.href='@Url.Action(ViewData["action"].ToString(), "Home",new { id = @car.Id})'">
                             <span>@ViewData["buttonName"].ToString()</span>
                         </div>

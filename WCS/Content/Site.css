@@ -23,23 +23,23 @@ textarea {
 }
 .img-container{
      position: relative;
-     height:252px;
-     width:380px;
+     max-width:380px;
 }
 
 .button {
-  position: absolute;
-  width: 380px;
-  top: 120px;
-  text-align: center;
-  opacity: 0;
-  transition: opacity .35s ease;
-  cursor:pointer;
+    position: relative;
+    top: 120px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+    cursor: pointer;
+    top: 50%;
+    margin-top: -22px;
 }
 
 .button span {
   width: 200px;
-  padding: 12px 48px;
+  padding: 2px 48px;
   text-align: center;
   color: white;
   border: solid 2px white;
@@ -47,9 +47,11 @@ textarea {
 }
 
 img {
-  position: absolute;
+  width:100%;
 }
-
+.overlay-container{
+    position:relative;
+}
 .overlay {
   position: absolute;
   top: 0;
